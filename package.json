@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "Tic-Tac-Toe game using React",
   "main": "src/index.jsx",
-  "scripts": {},
+  "scripts": {
+    "dev": "node -r esm ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack/webpack.config.dev.js",
+    "build:dev": "node -r esm ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.dev.js",
+    "build:prod": "node -r esm ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.prod.js",
+    "serve:dev": "npm run build:dev && serve -s ./dist -l 8080",
+    "serve:prod": "npm run build:prod && serve -s ./dist -l 8080"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/3a4ik/react-tic-tac-toe.git"
