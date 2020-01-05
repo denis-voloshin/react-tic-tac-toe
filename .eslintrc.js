@@ -100,7 +100,7 @@ module.exports = {
     "no-shadow-restricted-names": "error",
     "no-undef-init": "warn",
     "no-undefined": "error",
-    "no-unused-vars": "warn",
+    "no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
     "no-use-before-define": ["error", { "functions": false }],
 
     /* ==================== Node.js and CommonJS ==================== */
