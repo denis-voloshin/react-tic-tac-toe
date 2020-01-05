@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import produce from 'immer';
 import styled from 'styled-components';
 
-import { SYMBOLS, emptyBoardRow, mapIndexed, isGameWon } from '../helpers';
+import { SYMBOLS, emptyBoardRow, mapIndexed, getWinStatus } from '../helpers';
 import { BoardButton } from './BoardButton';
 import { WinPopup } from './WinPopup';
 
@@ -28,7 +28,9 @@ export const Board = () => {
   const [nextSymbol, setNextSymbol] = useState(SYMBOLS.X);
 
   const winner = useMemo(() => {
-    if (isGameWon(board)) {
+    const isGameWon = getWinStatus(board);
+
+    if (isGameWon) {
       return nextSymbol === SYMBOLS.X ? SYMBOLS.O : SYMBOLS.X;
     }
 

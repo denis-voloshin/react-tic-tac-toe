@@ -9,7 +9,7 @@ export const emptyBoardRow = _.times(() => null, 3);
 
 export const mapIndexed = _.map.convert({ cap: false });
 
-export const isGameWon = board => {
+export const getWinStatus = board => {
   const tests = [
     // Diagonal
     board[0][0] && board[0][0] === board[1][1] && board[1][1] === board[2][2],
